@@ -157,7 +157,7 @@ export default function PredictionApp() {
                 <span className="font-bold">{rounds[0].id}</span>
               </div>
               <div className="text-yellow-400 font-bold">
-                {rounds[0].payout} Payout
+                {rounds[0].payout} Cashout
               </div>
             </div>
 
