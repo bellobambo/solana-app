@@ -14,25 +14,12 @@ export default function WalletProviders({ children }) {
   // Set to Mainnet
   const network = WalletAdapterNetwork.Mainnet;
 
-  // Use either default mainnet endpoint or a custom RPC
   const endpoint = useMemo(() => {
-    // Option 1: Default Solana mainnet cluster
-    // return clusterApiUrl(network);
-
-    // Option 2: Recommended - Use a dedicated RPC provider
     return "https://api.mainnet-beta.solana.com"; // Default Solana RPC
-    // Or from providers like:
-    // return "https://solana-mainnet.rpc.extrnode.com";
-    // return "https://rpc.ankr.com/solana";
   }, [network]);
 
   const wallets = useMemo(
-    () => [
-      new PhantomWalletAdapter({ network }),
-      // Add other wallets if needed:
-      // new SolflareWalletAdapter({ network }),
-      // new GlowWalletAdapter({ network }),
-    ],
+    () => [new PhantomWalletAdapter({ network })],
     [network]
   );
 
